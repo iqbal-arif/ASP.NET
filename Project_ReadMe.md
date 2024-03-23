@@ -30,3 +30,10 @@ ASP.NET CORE MVC
 	2. Renders pages in the Browser.
 	3. Interact with Context to paste the data from Database into the pages and renders to Browser. 
 		
+
+
+Installation
+1. Package Manger : Project => Mange NuGet Packages
+	a. Install MS.EntityFrameworkCore
+	b. Install MS.EntityFrameworkCore.Tools
+	c. MS.EntityFrameworkCore.SqlServer
