@@ -11,3 +11,13 @@ Create an application that can be used by consignment shops to run their busines
 1. Commissions can change.
 1. Track how much to pay to vendor.
 1. Track how much to pay to store.
+
+
+GitHub Link
+***
+https://github.com/JoyfulReaper/ConsignmentShopDemo
+
+**Instructions**
+
+1. Rename the Instance name from Properies Tab
+1. label1 is an Instance fo ***System.Windows.Forms.Label*** Class
