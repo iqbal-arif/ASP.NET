@@ -1,0 +1,62 @@
+Questions:
+1 - Do we want authentication / Authorization?
+
+2 - Do we want to limit what quetions a person can ask? Rate Limit?
+
+3 - Offensive content filter?
+
+4 - Can we add new categories / statuses ?
+
+5 - Should we show off a user's contributions?
+
+6 - How does the system know if I have voted on a suggestion?
+
+7 - Can user vote on their own suggestion?
+
+8 - Should we limit the size of suggestions / descriptions?
+
+9 - How do admins add a status to a suggesion?
+
+10- What happens when the lists gets huge?
+
+
+
+
+
+
+
+Version 1 Features:
+
+1. Approve / Deny questions as an admin
+
+2. Admin Approval Screen
+
+3. Authentcation / Authorization
+
+4. User Profile Page
+
+5. Track the user's votes
+
+6. Login / Account / Logout options
+
+7. Limit the size of the title and description
+
+8. Admins to add a status to a suggestion with a note for where it is located
+
+9. Admin feature for archiving suggestions
+
+
+
+
+Future Version Features
+
+1. Add Categories
+2. Add Statuses
+
+
+
+Big Pieces of App
+
+1 - Blazor Server - FrontEnd
+2 - Azure Active Directory B2C 50K - Used for Authentication & Authorization
+3 - 
