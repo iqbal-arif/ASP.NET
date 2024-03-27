@@ -1,0 +1,32 @@
+Category:
+CategoryName
+CategoryDescription
+
+Status:
+StatusName
+StatusDescription
+
+User:
+ObjectId (from Azure)
+FirstName
+LastName
+DisplayName
+EmailAddress
+AuthoredSuggestions
+VotedOnSuggesitons
+
+Suggestion:
+Suggestion
+Description
+DateCreated
+Category
+Author (Id & DisplayName)
+UserVotes (Id)
+SuggestionStatus
+OwnerNotes
+ApprovedForRelease
+Rejected (never release)
+Archived (stale suggestions)
+
+
+
