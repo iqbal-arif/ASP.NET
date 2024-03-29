@@ -23,9 +23,9 @@ public class UserModel
 
 
    //List of Suggestion Author as you have created
-   public List<SuggestionModel> AuthoredSuggestions { get; set; } = new ();
+   public List<BasicSuggestionModel> AuthoredSuggestions { get; set; } = new ();
 
-   public List<SuggestionModel> VotedOnSuggestions { get; set; } = new ();
+   public List<BasicSuggestionModel> VotedOnSuggestions { get; set; } = new ();
 
    
 }
