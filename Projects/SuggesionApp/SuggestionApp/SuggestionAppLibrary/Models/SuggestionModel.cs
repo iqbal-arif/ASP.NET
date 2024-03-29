@@ -18,7 +18,7 @@ namespace SuggestionAppLibrary.Models
 
       public CategoryModel Category { get; set; }
 
-      public string Author { get; set; }
+      public BasicUserModel Author { get; set; }
 
       //to set unique value to avoid duplicate
       public HashSet<string> UserVotes { get; set; } = new();

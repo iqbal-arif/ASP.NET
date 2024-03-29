@@ -21,4 +21,10 @@ AppLibrary - SuggestionAppLibrary
 5. Data Design to Library
 	a. CategoryModel : properties and MongoDb Unique Identifier setup
 	b. StatusModel :   properties and MongoDb Unique Identifier setup
-	c. SuggestionModel: 
+	c. SuggestionModel:properties and MongoDb Unique Identifier setup, 
+					   HasSet<strring> stores only unique values to avoid Duplicates
+					   StatusModel : Suggestion Completed, Watched, Upcoming
+					   OwnerNotes :  More description for a Suggestion
+	d. UserModel:	   properties and MongoDb Unique Identifier setup, Azuer ID (For user Identity)
+					   (SubObject) BasicSuggestionModel for Id & Suggestion Title (Extracted from SuggestionModel)
+					   (SubObect) BasicUserModel :properties and MongoDb Unique Identifier setup 

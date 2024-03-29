@@ -6,21 +6,25 @@ public class BasicSuggestionModel
 {
    [BsonRepresentation(BsonType.ObjectId)]
 
-   public int Id { get; set; }
+   public string Id { get; set; }
 
    public string Suggestion { get; set; }
 
 
-   //CONSTRUCTOR
+   //CONSTRUCTOR FOR CREATE NEW OBJECT WITH ID & SUGGESITON TITLE
 
-
+   //To crated a New Model
    public BasicSuggestionModel()
    {
       
    }
 
+   //Pull the values from SuggestionModel
    public BasicSuggestionModel(SuggestionModel suggestion)
    {
-      var Id = suggestion.Id;
+      Id = suggestion.Id;
+      Suggestion = suggestion.Suggestion;
+
+      
    }
 }
