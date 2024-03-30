@@ -5,18 +5,18 @@ using MongoDB.Driver;
 
 namespace SuggestionAppLibrary.DataAccess;
 
-public class DbConnection
+public class DbConnection : IDbConnection
 {
    //CONSTRUCTOR FOR CONFIGURATION
 
-   
-      private readonly IConfiguration _config;
 
-      //Database connection to MongoDb
-      private readonly IMongoDatabase _db;
+   private readonly IConfiguration _config;
 
-      //Reference to appsettings.json 
-      private string _connectionId = "MongoDB";
+   //Database connection to MongoDb
+   private readonly IMongoDatabase _db;
+
+   //Reference to appsettings.json 
+   private string _connectionId = "MongoDB";
 
    public string DbName { get; private set; }
 
@@ -28,7 +28,7 @@ public class DbConnection
    public string StatusCollectionName { get; private set; } = "statuses";
 
    public string UserCollectionName { get; private set; } = "users";
-   
+
    public string SuggestionCollectionName { get; private set; } = "suggestions";
 
 
@@ -46,22 +46,22 @@ public class DbConnection
 
    //CONSTRUCTOR FOR new Client with connection to Database and creates connections to all four collections
    public DbConnection(IConfiguration config)
-      {
-         _config = config;
+   {
+      _config = config;
 
-         Client = new MongoClient(_config.GetConnectionString(_connectionId));
+      Client = new MongoClient(_config.GetConnectionString(_connectionId));
 
-         DbName = _config[key: "DatabaseName"]; //reference to appsettings.json
+      DbName = _config[key: "DatabaseName"]; //reference to appsettings.json
 
-         _db = Client.GetDatabase(DbName);
+      _db = Client.GetDatabase(DbName);
 
-         CategoryColleciton = _db.GetCollection<CategoryModel>(CategoryCollectionName);
-         StatusColleciton = _db.GetCollection<StatusModel>(StatusCollectionName);
-         UserCollection = _db.GetCollection<UserModel>(UserCollectionName);
-         SuggestionColleciton = _db.GetCollection<SuggestionModel>(SuggestionCollectionName);
+      CategoryColleciton = _db.GetCollection<CategoryModel>(CategoryCollectionName);
+      StatusColleciton = _db.GetCollection<StatusModel>(StatusCollectionName);
+      UserCollection = _db.GetCollection<UserModel>(UserCollectionName);
+      SuggestionColleciton = _db.GetCollection<SuggestionModel>(SuggestionCollectionName);
 
-      }
+   }
 
-  
+
 
 }
