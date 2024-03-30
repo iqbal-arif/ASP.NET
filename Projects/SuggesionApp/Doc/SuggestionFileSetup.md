@@ -34,7 +34,7 @@
 	1. Creates a Singleton out of the independence Injection while keeping the conneciton open continously
 	2. Change Singleton to Scoped Class where Independence Injection for every User gets a Singleton version 
 	3. Lesson 9 : Database connection class DbConneciton.cs
-	4. MongoUserData L10 : 
+	4. MongoUserData L10 : UserModel Methods
 
 
 
