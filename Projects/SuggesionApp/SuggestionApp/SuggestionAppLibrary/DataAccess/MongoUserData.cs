@@ -8,7 +8,8 @@ public class MongoUserData
 {
    private readonly IMongoCollection<UserModel> _users;
 
-
+   //Collecting UserCollection already Instantiated by IMongoDb and assigning it to _users
+   //Copying the refernce of t
    public MongoUserData(IDbConnection db)
    {
       _users = db.UserCollection;
@@ -21,11 +22,17 @@ public class MongoUserData
    } 
    
    //Get all users Asynchronously
-   public async Task<List<UserModel>> GetUser(string id)
+   public async Task<UserModel> GetUser(string id)
    {
       var results = await _users.FindAsync(u => u.Id == id);
       return results.FirstOrDefault();
       
+   } 
+   
+   public async Task<UserModel> GetUserFromAuthentication(string objectId)
+   {
+      var results = await _users.FindAsync(u => u.ObjectIdentifier == objectId);
+      return results.FirstOrDefault();
    }
 
 
