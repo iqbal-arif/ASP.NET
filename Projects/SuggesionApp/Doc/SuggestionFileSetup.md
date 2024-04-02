@@ -36,7 +36,7 @@
 	3. Lesson 9 : Database connection class DbConneciton.cs
 	4. MongoUserData L10 : UserModel Methods
 	5. MongoStatusData L10
-	6. MongoSuggestionData L11
+	6. MongoSuggestionData L11 : Create a Suggetion Method
 
 
 
