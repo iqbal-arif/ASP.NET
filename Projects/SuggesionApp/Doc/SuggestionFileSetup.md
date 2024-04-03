@@ -3,6 +3,7 @@
 1. GlobalUsing : Setting GlobalUsings.cs to reference SuggestionAppLibrary for SuggestionAppUI and works independent of the Library but access the SuggetionAppLibray/DataAccess
 2. Dependency Injection : Set ConfigureServices() (or any other name as ConfigureInjection()) and move dependency injection from Program.cs to RegisterService.cs.  This is done to keep code clean and set separate class to reduce program.cs services.
 3. Memory Caching : in RegisterServices add AddMemoryCache()
+4. Blazer Page: Pages/Add Razor Component
    
 
 
