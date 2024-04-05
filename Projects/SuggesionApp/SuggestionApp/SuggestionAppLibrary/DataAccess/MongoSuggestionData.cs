@@ -17,7 +17,7 @@ public class MongoSuggestionData : ISuggestionData
       _db = db;
       _userData = userData;
       _cache = cache;
-      _suggestions = db.SuggestionColleciton
+      _suggestions = db.SuggestionColleciton;
    }
 
    //GET ALL SUGGESTIONS
@@ -143,7 +143,7 @@ public class MongoSuggestionData : ISuggestionData
          var usersInTransaction = db.GetCollection<UserModel>(_db.UserCollectionName);
          var user = await _userData.GetUser(suggestion.Author.Id);
          user.AuthoredSuggestions.Add(new BasicSuggestionModel(suggestion));
-         await usersInTransaction.ReplaceOneAsync(u->u.Id == user.Id, user);
+         await usersInTransaction.ReplaceOneAsync(u => u.Id == user.Id, user);
 
          await session.CommitTransactionAsync();
 
