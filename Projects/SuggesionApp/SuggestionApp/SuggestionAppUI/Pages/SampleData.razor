@@ -11,18 +11,18 @@
 else
 {
     <button class="btn btn-primary" @onclick="CreateCategories">Create Categories</button>
-
 }
 
 @if (statusesCreated)
-{
+{ 
     <h4>Statuses have been created</h4>
-
 }
 else
-{
-    <button class="btn btn-primary" @onclick="CreateStatuses">Create Statuses</button>
+{  
+    <button class="btn btn-primary" @onclick="CreateStatuses">Create Statuses</button> 
 }
+
+
 
 @code {
     private bool categoriesCreated = false;
