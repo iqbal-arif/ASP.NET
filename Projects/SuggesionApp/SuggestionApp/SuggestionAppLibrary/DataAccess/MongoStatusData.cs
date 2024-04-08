@@ -38,7 +38,7 @@ public class MongoStatusData : IStatusData
 
    // Creating the Status
 
-   public Task CreateCategory(StatusModel status)
+   public Task CreateStatus(StatusModel status)
    {
       return _statuses.InsertOneAsync(status);
    }
