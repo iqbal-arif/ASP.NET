@@ -1,13 +1,32 @@
 **File Setup**
 ***
-Lesson 6: Blazor Server App BoilerPlate Setup 
-		  Class Library .NET Standard or .NET Core : SuggestionAppLibrary
-		  Right-Click on SuggestinAppUI (Set a Startup Project)
+Lesson 6: ***1. Blazor Server App BoilerPlate Setup*** 
+		  2. Class Library .NET Standard or .NET Core : SuggestionAppLibrary
+		  3. Right-Click on SuggestinAppUI (Set a Startup Project)
+		  4. Right-Click on SuggestionApp / (Add a EditConfig file) : .editodrconfig  (To style the current solution file)
+		  5. Remove FetchData.razor Counter.razor Shared/SurvyPrompt.razor
+		  6. Remove in index.razor page <SurveyPrompt...../>
+		  7. In Program.cs remove. builder.Services.....<WeatherForecastService>()
+		  8. Remove Data folder and all its content (WeatherForecast.cs ; WeatherForecasetService.cs)
+		  9. Remove NavMenu.razor
+		  10. Remvoe using SuggestionAppUI.Data; in Program.cs
+		  11. In MainLayout.razor remove <NavMenue section.
+		  12. Remove Aout Section in MainLayout.razor
+		  13. Remove class="tkop-row px-4"
+
+
 
 
 
 **BLAZOR - SuggestionAppUI**
 ***
+
+Added following files and folders
+1. Components
+2. Models
+3. wwwroot/images
+
+
 1. GlobalUsing : Setting GlobalUsings.cs to reference SuggestionAppLibrary for SuggestionAppUI and works independent of the Library but access the SuggetionAppLibray/DataAccess
 2. Dependency Injection : Set ConfigureServices() (or any other name as ConfigureInjection()) and move dependency injection from Program.cs to RegisterService.cs.  This is done to keep code clean and set separate class to reduce program.cs services.
 3. Memory Caching : in RegisterServices add AddMemoryCache()
@@ -23,8 +42,8 @@ Lesson 6: Blazor Server App BoilerPlate Setup
 **AppLibrary - SuggestionAppLibrary**
 ***
 
-1. MODELS / SuggestionModel.cs
-2. DATA / DbConnection.cs  : Connection for MongoDb
+1. MODELS / SuggestionModel.cs (Specific to DataAcess)
+2. DATA / DbConnection.cs  : Connection for MongoDb (Get info in and out Of Db)
 3. GlobalUsing : Setting for AppLibrary to reference Models and DataAcces. And it creates DLL for Blazor
 4. Memory Caching : Already added memory package in the SuggesitonAppLibrary
  <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
