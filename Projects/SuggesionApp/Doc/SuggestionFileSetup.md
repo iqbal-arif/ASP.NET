@@ -1,3 +1,11 @@
+**File Setup**
+***
+Lesson 6: Blazor Server App BoilerPlate Setup 
+		  Class Library .NET Standard or .NET Core : SuggestionAppLibrary
+		  Right-Click on SuggestinAppUI (Set a Startup Project)
+
+
+
 **BLAZOR - SuggestionAppUI**
 ***
 1. GlobalUsing : Setting GlobalUsings.cs to reference SuggestionAppLibrary for SuggestionAppUI and works independent of the Library but access the SuggetionAppLibray/DataAccess
