@@ -29,6 +29,13 @@ else
     private bool categoriesCreated = false;
     private bool statusesCreated = false;
 
+    //For Development Stating Enviornment
+
+    private async Task GenerateSampleData()
+    {
+        
+    }
+
     private async Task CreateCategories()
     {
         var categories = await categoryData.GetAllCategories();
