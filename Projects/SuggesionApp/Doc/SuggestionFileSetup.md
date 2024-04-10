@@ -31,6 +31,7 @@ Added following files and folders
 2. Dependency Injection : Set ConfigureServices() (or any other name as ConfigureInjection()) and move dependency injection from Program.cs to RegisterService.cs.  This is done to keep code clean and set separate class to reduce program.cs services.
 3. Memory Caching : in RegisterServices add AddMemoryCache()
 4. Blazer Page: Pages/Add Razor Component
+5. RegisterServices.cs : Adding Dependency Injections Lesson 11
    
 
 
@@ -64,7 +65,7 @@ Added following files and folders
 	3. Lesson 9 : Database connection class DbConneciton.cs
 	4. MongoUserData L10 : UserModel Methods
 	5. MongoStatusData L10
-	6. MongoSuggestionData L11 : Create a Suggetion Method. Added Dependency Injections in SuggestionAppUI/RegisterServcie.cs
+	6. MongoSuggestionData L11 : Create a Suggetion Method DataAccess for entire App. Added Dependency Injections in SuggestionAppUI/RegisterServcie.cs
 
 
 
