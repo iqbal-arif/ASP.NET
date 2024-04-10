@@ -75,5 +75,28 @@ Added following files and folders
 2. secrets.json (RightClick on SuggesitonAppUI/Manage User Secrets) : Contains server connection string store seperately. Don't commit to git or any online userControl. In production it is placed in CI/CD process.
 
 
+**Package Instalaltions ON AppLibrary**
+****
+Lesson 6:
+1. Right-Click on Dependencies of SuggestionsAppLibrary / Manage NuGet Packages
+2. Pacakges:
+	a. Microsoft.Extensions.Caching.Memory v6.0: Allows in Memodry caching
+	b. Microsoft.Extensions.Configuration.Abstractions v6.0 : Allows Class Library to talk to appsettings.json file. Findiing configuration information in class library.
+	c. MongoDB.Driver : Communicates with MongoDB to pull or push data back and forth.
+
+
+
+**Package Instalaltions ON Blazor Server Project AppUI**
+1. Right-Click on Dependencies of SuggestionsAppUI / Manage NuGet Packages
+2. Packgaes: Helps in frontEnd of the App: Allow users to log in to authenticate in via b2c to get authorization to get and run ui components for identity
+	a. Microsoft.Identity.Web
+	b. Microsoft.Identity.UI
+
+
+**One-Way Relationship between AppLibrary aND AppUI**
+
+1. Right-Click on Dependencies of SuggestionsAppUI / Add Project Reference and Select SuggesionAppLibrary : Creates reference from UI to AppLibrary
+1. 
+
 
 	
