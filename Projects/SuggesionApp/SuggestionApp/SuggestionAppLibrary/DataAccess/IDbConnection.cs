@@ -9,7 +9,7 @@ public interface IDbConnection
    string DbName { get; }
    IMongoCollection<StatusModel> StatusColleciton { get; }
    string StatusCollectionName { get; }
-   IMongoCollection<SuggestionModel> SuggestionColleciton { get; }
+   IMongoCollection<SuggestionModel> SuggestionCollection { get; }
    string SuggestionCollectionName { get; }
    IMongoCollection<UserModel> UserCollection { get; }
    string UserCollectionName { get; }

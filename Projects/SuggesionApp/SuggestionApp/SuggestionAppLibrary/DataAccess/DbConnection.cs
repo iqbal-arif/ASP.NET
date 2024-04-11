@@ -1,4 +1,4 @@
-﻿
+﻿//LESSON 9
 
 using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
@@ -39,9 +39,10 @@ public class DbConnection : IDbConnection
 
    public IMongoCollection<StatusModel> StatusColleciton { get; private set; }
 
-   public IMongoCollection<SuggestionModel> SuggestionColleciton { get; private set; }
-
    public IMongoCollection<UserModel> UserCollection { get; private set; }
+
+   public IMongoCollection<SuggestionModel> SuggestionCollection { get; private set; }
+
 
 
    //CONSTRUCTOR FOR new Client with connection to Database and creates connections to all four collections
@@ -51,14 +52,14 @@ public class DbConnection : IDbConnection
 
       Client = new MongoClient(_config.GetConnectionString(_connectionId));
 
-      DbName = _config[key: "DatabaseName"]; //reference to appsettings.json
+      DbName = _config["DatabaseName"]; //reference to appsettings.json
 
       _db = Client.GetDatabase(DbName);
 
       CategoryColleciton = _db.GetCollection<CategoryModel>(CategoryCollectionName);
       StatusColleciton = _db.GetCollection<StatusModel>(StatusCollectionName);
       UserCollection = _db.GetCollection<UserModel>(UserCollectionName);
-      SuggestionColleciton = _db.GetCollection<SuggestionModel>(SuggestionCollectionName);
+      SuggestionCollection = _db.GetCollection<SuggestionModel>(SuggestionCollectionName);
 
    }
 

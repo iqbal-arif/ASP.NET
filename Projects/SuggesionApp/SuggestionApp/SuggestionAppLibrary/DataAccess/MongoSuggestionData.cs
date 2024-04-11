@@ -19,7 +19,7 @@ public class MongoSuggestionData : ISuggestionData
       _db = db;
       _userData = userData;
       _cache = cache;
-      _suggestions = db.SuggestionColleciton;
+      _suggestions = db.SuggestionCollection;
    }
 
    //GET ALL SUGGESTIONS

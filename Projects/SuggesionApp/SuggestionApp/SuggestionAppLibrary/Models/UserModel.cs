@@ -1,4 +1,4 @@
-﻿
+﻿//LESSON 8
 
 namespace SuggestionAppLibrary.Models;
 public class UserModel
@@ -26,6 +26,5 @@ public class UserModel
    public List<BasicSuggestionModel> AuthoredSuggestions { get; set; } = new ();
 
    public List<BasicSuggestionModel> VotedOnSuggestions { get; set; } = new ();
-
-   
+      
 }

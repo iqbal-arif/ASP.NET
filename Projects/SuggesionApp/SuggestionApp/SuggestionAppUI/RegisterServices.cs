@@ -1,5 +1,5 @@
 ﻿namespace SuggestionAppUI;
-
+//LESSON 7
 public static class RegisterServices
 {
    public static void ConfigureServices(this WebApplicationBuilder builder)

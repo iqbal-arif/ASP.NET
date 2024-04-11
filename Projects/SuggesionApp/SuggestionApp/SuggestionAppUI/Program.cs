@@ -1,3 +1,4 @@
+//LESSON 7
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using SuggestionAppUI;
@@ -6,7 +7,7 @@ using SuggestionAppUI;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// 
+// All Services are in RegisterServices
 builder.ConfigureServices();
 
 

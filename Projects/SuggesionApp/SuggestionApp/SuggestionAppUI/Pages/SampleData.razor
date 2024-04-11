@@ -5,6 +5,7 @@
 @inject ISuggestionData suggestionData
 
 
+
 <h3>Sample Data</h3>
 
 @if (categoriesCreated)
@@ -59,7 +60,6 @@ else
         votes.Add("3");
 
         SuggestionModel suggestion = new()
-
             {
                 Author = new BasicUserModel(foundUser),
                 Category = categories[0],
@@ -67,9 +67,8 @@ else
                 Description = "This is a suggestion created by the sample data generation method."
             };
         await suggestionData.CreateSuggestion(suggestion);
-
+/*
         suggestion = new()
-
             {
                 Author = new BasicUserModel(foundUser),
                 Category = categories[1],
@@ -81,7 +80,6 @@ else
         await suggestionData.CreateSuggestion(suggestion);
 
         suggestion = new()
-
             {
                 Author = new BasicUserModel(foundUser),
                 Category = categories[2],
@@ -93,7 +91,6 @@ else
         await suggestionData.CreateSuggestion(suggestion);
 
         suggestion = new()
-
             {
                 Author = new BasicUserModel(foundUser),
                 Category = categories[3],
@@ -109,7 +106,6 @@ else
 
 
             suggestion = new()
-
             {
                 Author = new BasicUserModel(foundUser),
                 Category = categories[4],
@@ -120,7 +116,7 @@ else
                 OwnerNotes = "This is the note for the status."
             };
             await suggestionData.CreateSuggestion(suggestion);
-
+*/
 
     }
 

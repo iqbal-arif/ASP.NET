@@ -1,36 +1,35 @@
-﻿
+﻿//LESSON 8,9
 
-namespace SuggestionAppLibrary.Models
-{
-    public class SuggestionModel
-    {
-      //PROPERTIES
-      [BsonId]
-      [BsonRepresentation(BsonType.ObjectId)]
+namespace SuggestionAppLibrary.Models;
 
-      public string Id { get; set; }
+ public class SuggestionModel
+ {
+   //PROPERTIES
+   [BsonId]
+   [BsonRepresentation(BsonType.ObjectId)]
 
-      public string Suggestion { get; set; }
+   public string Id { get; set; }
 
-      public string Description { get; set; }
+   public string Suggestion { get; set; }
 
-      public DateTime DateCreated { get; set; } = DateTime.UtcNow;
+   public string Description { get; set; }
 
-      public CategoryModel Category { get; set; }
+   public DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
-      public BasicUserModel Author { get; set; }
+   public CategoryModel Category { get; set; }
 
-      //to set unique value to avoid duplicate
-      public HashSet<string> UserVotes { get; set; } = new();
+   public BasicUserModel Author { get; set; }
 
-      public StatusModel SuggestionStatus { get; set; }
+   //to set unique value to avoid duplicate
+   public HashSet<string> UserVotes { get; set; } = new();
 
-      public string OwnerNotes { get; set; }
+   public StatusModel SuggestionStatus { get; set; }
 
-      public bool ApprovedForRelease { get; set; } = false;
+   public string OwnerNotes { get; set; }
 
-      public bool Archived { get; set; } = false;
+   public bool ApprovedForRelease { get; set; } = false;
 
-      public bool Rejected { get; set; } = false;
-   }
+   public bool Archived { get; set; } = false;
+
+   public bool Rejected { get; set; } = false;
 }
