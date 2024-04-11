@@ -66,11 +66,7 @@ else
                 Suggestion = "Our First Suggesiton",
                 Description = "This is a suggestion created by the sample data generation method."
             };
-
         await suggestionData.CreateSuggestion(suggestion);
-
-
-
 
         suggestion = new()
 
@@ -82,7 +78,6 @@ else
                 SuggestionStatus = statuses[0],
                 OwnerNotes = "This is the note for the status."
             };
-
         await suggestionData.CreateSuggestion(suggestion);
 
         suggestion = new()
@@ -95,7 +90,6 @@ else
                 SuggestionStatus = statuses[1],
                 OwnerNotes = "This is the note for the status."
             };
-
         await suggestionData.CreateSuggestion(suggestion);
 
         suggestion = new()
@@ -109,7 +103,6 @@ else
                 UserVotes = votes,
                 OwnerNotes = "This is the note for the status."
             };
-
         await suggestionData.CreateSuggestion(suggestion);
 
         votes.Add("4");
@@ -126,7 +119,6 @@ else
                 UserVotes = votes,
                 OwnerNotes = "This is the note for the status."
             };
-
             await suggestionData.CreateSuggestion(suggestion);
 
 
