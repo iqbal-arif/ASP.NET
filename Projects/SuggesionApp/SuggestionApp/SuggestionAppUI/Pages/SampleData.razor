@@ -29,6 +29,7 @@ else
 <button class="btn btn-danger" @onclick="GenerateSampleData">Generate Sample Data</button>
 
 @code {
+    
     private bool categoriesCreated = false;
     private bool statusesCreated = false;
 
@@ -67,7 +68,6 @@ else
                 Description = "This is a suggestion created by the sample data generation method."
             };
         await suggestionData.CreateSuggestion(suggestion);
-/*
         suggestion = new()
             {
                 Author = new BasicUserModel(foundUser),
@@ -78,6 +78,7 @@ else
                 OwnerNotes = "This is the note for the status."
             };
         await suggestionData.CreateSuggestion(suggestion);
+
 
         suggestion = new()
             {
@@ -116,7 +117,7 @@ else
                 OwnerNotes = "This is the note for the status."
             };
             await suggestionData.CreateSuggestion(suggestion);
-*/
+
 
     }
 
