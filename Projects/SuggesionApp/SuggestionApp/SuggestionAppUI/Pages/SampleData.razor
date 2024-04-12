@@ -68,6 +68,7 @@ else
                 Description = "This is a suggestion created by the sample data generation method."
             };
         await suggestionData.CreateSuggestion(suggestion);
+
         suggestion = new()
             {
                 Author = new BasicUserModel(foundUser),
