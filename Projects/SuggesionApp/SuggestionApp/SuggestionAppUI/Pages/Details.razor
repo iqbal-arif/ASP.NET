@@ -1,0 +1,104 @@
+﻿@page "/Details/{Id}"
+@inject ISuggestionData suggestionData
+@inject NavigationManager navManager
+
+
+<div>
+    <div>
+            @if(suggestion is not null)
+            {
+            <div>
+                <div>
+                    <div>
+                        @*UPVOTE CARATE*@
+                        <div>@GetUpvoteTopText()</div>
+                        @*Bootstrap Icon for an upArrow *class="oi oi-caret-top"*@
+                        <span class="oi oi-caret-top"></span>
+                        <div>@GetUpvoteBottomText()</div>
+                    </div>
+                    <div>
+                        <div>@suggestion.DateCreated.ToString("MM.dd.yyyy")</div>
+                    </div>
+                </div>
+                <div>
+                        <div>@suggestion.Suggestion</div>
+                        <div>@suggestion.Author.DisplayName</div>
+                        <div>@suggestion.Description</div>
+                        <div>@suggestion.Category.CategroyName</div>
+                </div>
+                <div>
+                    <button @onclick="ClosePage"></button>
+                </div>
+            </div>
+            }
+    </div>
+</div>
+
+@if(suggestion?.SuggestionSatus is not null)
+{
+    <div>
+        <div>
+            <div></div>@*DIV for box color*@
+            <div>
+                <div>
+                    @suggestion.SuggestionStatus.StatusName
+                </div>
+                <div>
+                    @((MarkupString)suggestion.OwnerNotes)@*MarkupString present notes as html note but not as a text string*@
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    //Parameter to match {id} for pages
+    [Parameter]
+    public string Id { get; set; }
+
+    private SuggestionModel suggestion;
+    //Suggestion Display per ID
+    protected async override Task OnInitializedAsync()
+    {
+        suggestion = await suggestionData.GetSuggestion(Id);
+    }
+
+
+    //Close Page to HomePage
+    private void ClosePage()
+    {
+        navManager.NavigateTo("/");
+    }
+
+    //HTML Suggestions User Vote
+    private string GetUpvoteTopText()
+    {
+        if (suggestion.UserVotes?.Count > 0)
+        {
+            return suggestion.UserVotes.Count.ToString("00");
+        }
+        else
+        {
+            return "Click To";
+        }
+
+    }
+
+    private string GetUpvoteBottomText()
+    {
+        if (suggestion.UserVotes?.Count > 1)
+        {
+            return "Upvotes";
+        }
+        else
+        {
+            return "Upvote";
+        }
+
+    }
+}
+
+
+
+
+

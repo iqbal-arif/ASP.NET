@@ -36,24 +36,66 @@
     <div>
         @if (suggestions is not null)
         {
+            @*Virtualize renders preloaded 6-8 pages and additional previous 8-6 pages upon scrolling*@
+            @*Items to LOOP Over Items="@suggestions" ; Context="s" ; s is a variable for suggestions*@
+            @*OverscanCount="10" renders preload pages plus 10 overscancount pages for smooth scrolling*@
             <Virtualize Items="@suggestions" Context="s" OverscanCount="10">
                 <div>
                     <div>
-                            <div>@GetUpvoteTopText(s)</div>
-                            <span class="oi oi-caret-top"></span>
-                            <div>@GetUpvoteBottomText(s)</div>
+                           <div>@GetUpvoteTopText(s)</div>
+                            @*Bootstrap Icon for an upArrow *class="oi oi-caret-top"*@
+                           <span class="oi oi-caret-top"></span>
+                           <div>@GetUpvoteBottomText(s)</div>
                     </div>
                     <div>
-                             <div @onclick="(() => OpenDetails(s))">@s.Suggestion</div>
-                             <div>
-                             <div @onclick="(() => OpenDetails(s))">@s.Category?.CategoryName</div>
-                             </div>
+                            @*Opens Suggestions Detail"*@
+                           <div @onclick="(() => OpenDetails(s))">@s.Suggestion</div>
+                            @*Clickable CategoryName"*@ 
+                           <div>
+                           <div @onclick="(() => OpenDetails(s))">@s.Category?.CategoryName</div>
+                           </div>
+                    </div>
+                    <div>
+                            @*Suggestion StatusName"*@ 
+                           <div>@s.SuggestionStatus?.StatusName</div>
                     </div>
                 </div>
             </Virtualize>
 
         }
     </div>
+    <div>
+        @if(categories is not null)
+        {
+            <div>
+                <span>Category</span>
+                <div @onclick="(()  => OnCategoryClick())" >All</div>
+
+                @foreach(var c in categories)
+                {
+                    <div @onclick="(() => OnCategoryClick(c.CategoryName))" >@c.CategoryName</div>
+                }
+            </div>
+        }
+        @if(statuses is not null)
+        {
+            <div>
+                <span>Status</span>
+                <div @onclick="(()  => OnStatusClick())" >All</div>
+
+                @foreach(var c in statuses)
+                {
+                    <div @onclick="(() => OnStatusClick(c.StatusName))" >@c.StatusName</div>
+                }
+            </div>
+        }
+
+
+    </div>
+
+
+
+
 </div>
 
 
