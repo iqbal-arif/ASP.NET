@@ -6,8 +6,45 @@
 @inject NavigationManager navManager //Allow to navigate between pages;
 @inject ProtectedSessionStorage sessionStorage  // for session storage;
 
-@*Lesson 13*@
+@*Lesson 14 : All HTML code for UI*@
 
+<h1>Training Suggestions</h1>
+
+<div>
+    <button>Suggest</button>
+</div>
+
+
+<div>
+    @*Suggesiton Count*@
+    <div>@suggestions?.Count Suggestions</div>
+
+    @*Toggle Button*@
+    <div>
+        <button @onclick="(() => OrderByNew(true))">New</button>
+        <button @onclick="(() => OrderByNew(false))">Popular</button>
+    </div>
+
+    @*Search bar*@
+
+    <div>
+        <input type="text" placeholder = "Search" aria-label="Search box" @oninput = "((txt) => OnSerachInput((string)txt.Value))" />
+    </div>
+</div>
+
+<div>
+    <div>
+        @if (suggestions is not null)
+        {
+
+
+        }
+    </div>
+</div>
+
+
+
+@*Lesson 13 : All injection Methods*@
 @code{
 
     private List<SuggestionModel> suggestions;
@@ -99,7 +136,7 @@
 
         if (isSortedByNew)
         {
-            output = output.OrderByDescending(s->s.DateCreated).ToList();
+            output = output.OrderByDescending(s => s.DateCreated).ToList();
         }
         else
         {
@@ -160,6 +197,23 @@
 
     }
 
-    
+    private string GetUpvoteBottomText(SuggestionModel suggestion)
+    {
+        if(suggestion.UserVotes?.Count > 1)
+        {
+            return "Upvotes";
+        }
+        else
+        {
+            return "Upvote";
+        }
+
+    }
+
+    //HTML Method to Open Suggestion Detail Page
+    private void OpenDetails(SuggestionModel suggestion)
+    {
+        navManager.NavigateTo($"/Details/{suggestion.Id}");
+    }
 
 }
