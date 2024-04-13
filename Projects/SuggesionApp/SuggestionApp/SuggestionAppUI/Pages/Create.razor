@@ -1,0 +1,93 @@
+﻿@page "/Create"
+@using SuggestionAppUI.Models
+@inject IUserData userData
+@inject ICategoryData categoryData
+@inject ISuggestionData suggestionData
+@inject NavigationManager navManager
+
+@*HTML*@
+
+<h1>Make A Suggestion</h1>
+
+<div>
+    <div>
+        <div>
+            <button @onclick="ClosePage"></button>
+        </div>
+
+        @if (categories is not null)
+        {
+            
+        }
+        @*OnInvalidSubmit: Submit only when the given field are filled & submit properly*@
+        <EditForm Model="suggestion" OnInvalidSubmit="CreateSuggestion">
+            @*Validates the MOdel's reguired logic in CreateSuggestionModel.cs are valid*@
+            <DataAnnotationsValidator/>
+            @*If the logic is not valid. It will put a summary of the data*@
+            <ValidationSummary/>
+            <div>
+                <label for="suggestion-test" >Suggestion</label>
+                <div>Focus on the topic or technology you want to learn about.</div>
+                <InputText id="suggestion-text" @bind-Value="suggestion.Suggestion"/>
+            </div>
+            
+            <div>
+                <label for="description" >Description</label>
+                <div>Briefly decribel your suggestion.</div>
+                <InputTextArea id="description" @bind-Value="suggestion.Description"/>
+            </div>            
+            
+            <div>
+                <button type="submit">Suggest</button>
+            </div>  
+
+        </EditForm>
+    </div>
+</div>
+
+
+
+
+
+
+@code {
+    //CREATE Suggesiton Model
+    private CreateSuggestionModel suggestion = new(); //Instantiating the model
+    private List<CategoryModel> categories; //list all category
+    private UserModel loggedInUser;
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        categories = await categoryData.GetAllCategories();
+
+        //TODO -  Replace with user lookup
+        loggedInUser = await userData.GetUserFromAuthentication("abc-123");
+    }
+
+    private void ClosePage()
+    {
+        navManager.NavigateTo("/");
+    }
+
+    //Creating Suggesion UI Specific : Figure out the difference between Applibrary SuggestionModel & UI CreateSuggestionModel
+    private async Task CreateSuggestion()
+    {
+        SuggestionModel s = new();
+        s.Suggestion = suggestion.Suggestion;    
+        s.Description = suggestion.Description;
+        s.Author = new BasicUserModel(loggedInUser);
+        s.Category = categories.Where(c => c.Id == suggestion.CategoryId).FirstOrDefault();
+
+        if (s.Category is null)
+        {
+            suggestion.CategoryId = "";
+            return;
+        }
+
+        await suggestionData.CreateSuggestion(s);
+        suggestion = new();
+        ClosePage();
+
+    }
+}

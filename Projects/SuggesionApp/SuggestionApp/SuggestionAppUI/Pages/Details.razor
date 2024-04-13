@@ -2,6 +2,8 @@
 @inject ISuggestionData suggestionData
 @inject NavigationManager navManager
 
+@*LESSON 15*@
+<h1>Suggestion Details</h1>
 
 <div>
     <div>
@@ -24,7 +26,7 @@
                         <div>@suggestion.Suggestion</div>
                         <div>@suggestion.Author.DisplayName</div>
                         <div>@suggestion.Description</div>
-                        <div>@suggestion.Category.CategroyName</div>
+                        <div>@suggestion.Category.CategoryName</div>
                 </div>
                 <div>
                     <button @onclick="ClosePage"></button>
@@ -34,7 +36,7 @@
     </div>
 </div>
 
-@if(suggestion?.SuggestionSatus is not null)
+@if(suggestion?.SuggestionStatus is not null)
 {
     <div>
         <div>
@@ -51,7 +53,8 @@
     </div>
 }
 
-@code {
+@code 
+{
     //Parameter to match {id} for pages
     [Parameter]
     public string Id { get; set; }
