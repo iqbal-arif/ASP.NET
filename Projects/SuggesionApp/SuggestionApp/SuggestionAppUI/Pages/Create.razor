@@ -1,10 +1,12 @@
 ﻿@page "/Create"
+@using SuggestionAppUI.Components
 @using SuggestionAppUI.Models
-@inject IUserData userData
 @inject ICategoryData categoryData
 @inject ISuggestionData suggestionData
+@inject IUserData userData
 @inject NavigationManager navManager
 
+@*LESSON 16*@
 @*HTML*@
 
 <h1>Make A Suggestion</h1>
@@ -20,7 +22,7 @@
             
         }
         @*OnInvalidSubmit: Submit only when the given field are filled & submit properly*@
-        <EditForm Model="suggestion" OnInvalidSubmit="CreateSuggestion">
+        <EditForm Model="suggestion" OnValidSubmit="CreateSuggestion">
             @*Validates the MOdel's reguired logic in CreateSuggestionModel.cs are valid*@
             <DataAnnotationsValidator/>
             @*If the logic is not valid. It will put a summary of the data*@
@@ -32,21 +34,34 @@
             </div>
             
             <div>
-                <label for="description" >Description</label>
-                <div>Briefly decribel your suggestion.</div>
-                <InputTextArea id="description" @bind-Value="suggestion.Description"/>
-            </div>            
-            
+                <label for="category">Category</label>
+                <div>Choose one category.</div>
+                <div>
+                    <MyInputRadioGroup id="category" @bind-Value="suggestion.CategoryId">
+                       @foreach (var c in categories)
+                        {
+                            <div>
+                                <InputRadio Value="@c.Id" id="@c.Id"/>
+                                <label for="@c.Id">@c.CategoryName - @c.CategoryDescription</label>
+                            </div>
+                        }
+                    </MyInputRadioGroup>
+                </div>
+            </div>
+
             <div>
-                <button type="submit">Suggest</button>
+                <label for="description">Description</label>
+                <div>Briefly decribel your suggestion.</div>
+                <InputTextArea id="description" @bind-Value="suggestion.Description" />
+            </div>
+
+            <div>
+                <button type="submit" >Suggest</button>
             </div>  
 
         </EditForm>
     </div>
 </div>
-
-
-
 
 
 

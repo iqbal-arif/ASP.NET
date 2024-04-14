@@ -121,7 +121,8 @@
         statuses = await statusData.GetAllStatuses();
     }
 
-
+    //Runs after the page is rendered in Host.cshtml and then rerendered lacally
+    //Prerender Blazor Server Project on server then transmit pages from Host.cshtml file
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
