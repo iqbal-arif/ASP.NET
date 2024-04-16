@@ -1,0 +1,14 @@
+**Review**
+****
+
+We learned a lot in the lesson! Now we know the relationship between the page model and our view page and how to attach functionality. Let’s summarize what we’ve learned so far:
+
+   1. In ASP.NET Razor Pages, a view page (.cshtml file) is attached to a page model (.cs file) by the @model directive. Any members defined in the page model class are accessible on the Razor page.
+
+   2. In ASP.NET, loosely typed data can be passed from a controller/page model to a shared view/Razor page using the ViewData property.
+
+   3. In ASP.NET, a shared layout page can be used by multiple views/Razor pages in order to reduce code duplication. The layout page must use the @RenderBody() method to render each view’s specific content. Each view can specify a layout by assigning the Layout property. Although not covered in this lesson, layouts can also optionally refer to other sections by calling the @RenderSection() method. This method allows you to carve out sections of the page, and then allow the main body of the content to emerge naturally wherever the @RenderBody() declaration is placed. For more information on @RenderSection(), refer to its documentation.
+
+   4. In ASP.NET, partials can be used to render HTML output within another markup file’s rendered output. They’re helpful to reduce repetitive code.
+
+   5. In ASP.NET, Razor pages support Tag Helpers, which are used to add server-side attributes to HTML elements.
