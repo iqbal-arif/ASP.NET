@@ -1,0 +1,13 @@
+_Layout.cshtml : Pages\Shared\ (This is the Main Page). All pages are rendered thorough _Layout
+	@RenderBody(): This is where all Razor Pages are injected for display
+	
+	Example: Index.cshtml : \Pages\Index.cshtml
+			@page: Razor Page
+
+
+Intro Pages:
+
+1. Index.cshtml
+
+2. Error.cshtml
+3. Privacy.cshtml
