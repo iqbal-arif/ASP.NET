@@ -28,7 +28,7 @@ namespace RazorPagesUI.Pages.Forms
 
             //TODO: Save Model to Database
 
-            //Routes to Index (Homepage) and display the city that was entered in AddAddress URL
+            //Routes to Index (Homepage) and Route vaues to anonymous Object to display the city that was entered in AddAddress URL
             return RedirectToPage("/Index", new {Address.City});
         }
     }

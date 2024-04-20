@@ -32,6 +32,22 @@ Adding an Add Address Page to Razor Pages that uses Razor _ViewStart.cshtml
 	1.1. Bulding Form:
 		1. AddAddress.cshtml.cs: Addressing propety of AddressModel property public AddressModel Address { get; set; }
 		2. asp-for="Address.StreetAddress": pointing to property from Address(View Model) to Model properties, such as, StreetAddress, city, zipcode,etc.
+		3. public IActionResult OnPost() : Defines the results of the action post.
+		4. ModelState.IsValid == false: Checks if something went wrong or inputs were invalid so it displays in in the view page as a summary.
 	2. AddAddress.cshtml is a View Page the front page for user to enter input values.
+	3. In Addresss.cshthml.cs: return RedirectToPage("/Index", new {Address.City});
+		//Routes to Index (Homepage) and Route vaues to anonymous Object to display the city that was entered in AddAddress URL
+			
 2. RazorPagesUI/Models/AddressModel.cs (Right-Click on RazorPageUI Add a Class AddressModel.cs)
+
+
+Page Flow:
+ViewStart.cshtml
+_Layout.cshtml
+	Index.cshtml
+	AddAddress.cshhtml
+		Address.cshtml.cs
+			AddressModel.cs
+	Privacy.cshtml
+	Error.cshtml
 
