@@ -24,3 +24,14 @@ Intro Pages:
 
 2. Error.cshtml
 3. Privacy.cshtml
+
+Razor Page Layout
+Adding an Add Address Page to Razor Pages that uses Razor _ViewStart.cshtml
+1. Pages/Forms(Right-Click Add Razor Page)
+	1. AddAddress.cshtml.cs is a View Model (That's a code behind View Page) that requires a Model (Class Object) that would be AddressModel.cs
+	1.1. Bulding Form:
+		1. AddAddress.cshtml.cs: Addressing propety of AddressModel property public AddressModel Address { get; set; }
+		2. asp-for="Address.StreetAddress": pointing to property from Address(View Model) to Model properties, such as, StreetAddress, city, zipcode,etc.
+	2. AddAddress.cshtml is a View Page the front page for user to enter input values.
+2. RazorPagesUI/Models/AddressModel.cs (Right-Click on RazorPageUI Add a Class AddressModel.cs)
+

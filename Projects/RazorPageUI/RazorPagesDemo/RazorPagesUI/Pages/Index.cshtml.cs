@@ -15,8 +15,9 @@ namespace RazorPagesUI.Pages
         //Data are not passed directly to onGet() or onPost()
         //Insead use properties that can be Read my Index.cshtml
         //PROPERTIES
-        [BindProperty(SupportsGet =true)] // allows to write value to it through onPost()method
+        [BindProperty(SupportsGet =true)] //Get Bind Property: allows to write value to it through onPost()method
         //SupportGet=true allows to HTTP Get Method to be displayed.
+        //in the URL enter localhost:50001/?Firstname=Arif
         public string City { get; set; } // will display on index page
         public void OnGet()
         {
