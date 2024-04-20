@@ -3,11 +3,24 @@ _Layout.cshtml : Pages\Shared\ (This is the Main Page). All pages are rendered t
 	
 	Example: Index.cshtml : \Pages\Index.cshtml
 			@page: Razor Page
+			@ means a razor syntax also used in MVC model
+			@model means the data associated with the page
+			@{} takes bunch of codes and display it on the webpage
+			@{ViewData[""]=""} is a Dictionary stores the key-pair values. And the values are displayed or pulled in the _Layout.cshtml file.
+
 
 
 Intro Pages:
 
 1. Index.cshtml
+	1.1. Index.cshtml.cs is a page model
+			1. As logger constructor (See Loggin .Net Core tim corey video)
+			2. Has two methods
+				2.1. OnGet(): renders the index page
+				2.2. OnPost(): post data for the index page
+	1.2. Don't pass values in the above two methods. But uses properties.
+		 And properties can be read by index page
+
 
 2. Error.cshtml
 3. Privacy.cshtml
