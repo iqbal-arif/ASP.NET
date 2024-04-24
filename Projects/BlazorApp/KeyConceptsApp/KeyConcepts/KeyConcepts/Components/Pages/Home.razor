@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject DemoDependency demo
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, EveryOne!</h1>
+<h2>@demo.GiveRandomNumber()</h2>
+
+Welcome to your new app.
+
+@*
+Uncomment to Display Loop Result
+@for(var i=0; i <5; i++)
+{
+    <h2>This is a Counter Componet number @i</h2>
+    <Counter/>
+}
+*@

@@ -27,3 +27,7 @@ b. Blazor Web Assembly
 
 13.appsettings.Development.json : overrieds the appsettings.json. Used for Development
 14.secrets.json : Right-Click on Project folder : Manage user secrets option. This will overrieds appsettings and appsettings.Development.json files.  Put your DB string key here for security. This won't be saved in version control.
+
+15.launchSetting.json: Different Settings for launching App. For PRODUCTION environment just Delete the "Development" text.
+
+16. 
