@@ -23,3 +23,7 @@ b. Blazor Web Assembly
 10.@Body in MainLayot.razor : Injects individual pages, such as Body and Weather pages, etc.
 
 11.wwwroot :All static framework and custom css files are located. Custom images will go here as well. Just create "img" folder under wwwroot
+12.appsettings.json : for SecurityKey (Azure, Webdev,etc), ConnectionString for DB
+
+13.appsettings.Development.json : overrieds the appsettings.json. Used for Development
+14.secrets.json : Right-Click on Project folder : Manage user secrets option. This will overrieds appsettings and appsettings.Development.json files.  Put your DB string key here for security. This won't be saved in version control.
