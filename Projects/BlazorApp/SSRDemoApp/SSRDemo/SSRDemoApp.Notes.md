@@ -21,3 +21,5 @@ b. Blazor Web Assembly
 9.MainLayout.razor: The App Global page is defined here mostly. For site Global looks
 
 10.@Body in MainLayot.razor : Injects individual pages, such as Body and Weather pages, etc.
+
+11.wwwroot :All static framework and custom css files are located. Custom images will go here as well. Just create "img" folder under wwwroot
