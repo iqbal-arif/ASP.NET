@@ -1,3 +1,44 @@
+
+1. App.razor: Single Page HTML in 
+a. Blazor Server and 
+b. Blazor Web Assembly
+
+2. For SSR App: App.razor acts as HTML Template for multiple HTML docs
+
+3. app.css: Site-wide CSS
+
+4. SSRDemo.styles.css: Component-centric CSS
+
+5.<HeadOutlet/ in App.razor : Direct/Renders Per page Title, Image for multi-page App.,e.g.,
+	a. For Home page:it renders <PageTitle>Home</PageTitle>
+	b. For Weather page: it renders <PageTitle>Weather</PageTitle>
+
+6.<Routes/ in App.razor: Injects entire App pages and Components are injected through it in line 16 of App.razor.
+
+7.blazoer.web.js : script for blazor framework that helps in streaming, such as, StreamRendering.
+
+8.Routes.razor : looks for routes in Program.cs, gather RouteData, and pass it to DefaultLayout MainLayout and Focus on h1 element of navigate.
+
+9.MainLayout.razor: The App Global page is defined here mostly. For site Global looks
+
+10.@Body in MainLayot.razor : Injects individual pages, such as Body and Weather pages, etc.
+
+11.wwwroot :All static framework and custom css files are located. Custom images will go here as well. Just create "img" folder under wwwroot
+12.appsettings.json : for SecurityKey (Azure, Webdev,etc), ConnectionString for DB
+
+13.appsettings.Development.json : overrieds the appsettings.json. Used for Development
+14.secrets.json : Right-Click on Project folder : Manage user secrets option. This will overrieds appsettings and appsettings.Development.json files.  Put your DB string key here for security. This won't be saved in version control.
+
+15.launchSetting.json: Different Settings for launching App. For PRODUCTION environment just Delete the "Development" text.
+
+**Component Based CSS**
+***
+1. Right-Click on Pages or Layout Folder and give it the same name as the page with .css for CSS files.
+1. The CSS style injection take cares of the css implementation. The below custom code  in Home.razor is responsible for applying the custom CSS for the component
+	<link rel="stylesheet" href="KeyConcepts.styles.css" />
+
+
+***
 1. There are two KeyConcepts folders.
 	a. KeyConcepts : SERVER SIDE
 	b. KeyConcepts.Client : CLIENT SIDE
@@ -61,3 +102,4 @@ _	b. In Demo.razor: Define full page
 1. <HeadContent>
     <meta name="description" content="This is the description for the home page"/>
 </HeadContent>
+
