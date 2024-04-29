@@ -4,7 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>718b6017-87e4-4bce-8374-4079dad4de50</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\KeyConcepts.Client\Pages\Demo.razor.cs" Link="Demo.razor.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\DependencyLibrary\DependencyLibrary.csproj" />

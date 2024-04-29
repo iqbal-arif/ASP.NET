@@ -1,9 +1,21 @@
 ﻿@page "/Demo"
+@rendermode InteractiveAuto
 @inject DemoDependency demo
+
+@* Used with Dependency Injection
+@inject IConfiguration config
+*@
+
 <h3>Demo</h3>
 
 <p>This is a Demo Component RandomNumber Method Injection Display : @demo.GiveRandomNumber()</p>
+@* Used in Dependency Injection 
 
-@code {
+<h2>@config.GetConnectionString("Default")</h2>
+*@
 
-}
+@* Used in Code Behind @code{} *@
+<h3>Initiated from atCode cSharp code @GetConnectionInfo()</h3>
+
+
+

@@ -1,15 +1,29 @@
 ﻿@page "/"
 @inject DemoDependency demo
+@inject IConfiguration config
+
+
 <PageTitle>Home</PageTitle>
+
+
+<HeadContent>
+    <meta name="description" content="This is the description for the home page"/>
+</HeadContent>
+
+
 
 <h1>Hello, EveryOne!</h1>
 <h2>@demo.GiveRandomNumber()</h2>
+<h2>@config.GetConnectionString("Default")</h2>
+<h3>Workday : @(config.GetValue<string>("WorkDaysPerWeek"))</h3>
+<h3>Company Name : @(config.GetValue<string>("Company:Name"))</h3>
+
 
 Welcome to your new app.
 
 @*
 Uncomment to Display Loop Result
-@for(var i=0; i <5; i++)
+@for(var i=0; i < 5; i++)
 {
     <h2>This is a Counter Componet number @i</h2>
     <Counter/>
