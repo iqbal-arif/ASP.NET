@@ -103,3 +103,17 @@ _	b. In Demo.razor: Define full page
     <meta name="description" content="This is the description for the home page"/>
 </HeadContent>
 
+***
+
+**Custom JavaScript per page**
+***
+1. Right-Click on page add New Item as JS file.
+1. Give the file same name as page name with .js as extention.
+1. This file can also be placed in wwwroot folder and reference can be made in App.razor file.
+1. Steps for Custom JS
+	A. write JS code in JS file
+	B. Adding IJSRuntime for JS dependency injection in Page.
+	C. jsModule Variable to reference the JS file
+	D. Initialize the jsModule referece and import the code.
+	E. Invoking void js method or Invoking return js method.
+3. The custom JS file does not showup in Debugger as this file is being imorted by _framework/blazor.web.js file. _
