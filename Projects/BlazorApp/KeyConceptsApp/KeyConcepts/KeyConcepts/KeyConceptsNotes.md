@@ -19,7 +19,7 @@
 <h2>@config.GetConnectionString("Default")</h2>
 	b. The IConfigurartion helps reading appsettings.json value in page. See below.
 
-***Video-40: ++Dependency_Injection++***_	
+***Video-40: ++Dependency_Injection vs. Property Injection++***_	
 **appsettings.json**
 ***
 1.Adding value in appsettings.json file 

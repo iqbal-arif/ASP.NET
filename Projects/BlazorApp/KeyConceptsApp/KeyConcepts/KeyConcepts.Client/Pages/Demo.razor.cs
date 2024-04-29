@@ -8,11 +8,11 @@ public partial class Demo
 {
     [Inject]
 
-    protected IConfiguration config { get; set; } = default!;
+    protected IConfiguration Config { get; set; } = default!;
 
     private string? GetConnectionInfo()
     {
-        return config.GetConnectionString("Default");
+        return Config.GetConnectionString("Default");
     }
 
     private string GetTestInfo()
