@@ -10,20 +10,30 @@
 }
 
 <button class="btn btn-primary" @onclick = "UpdateText">Update Text</button>
+<button class="btn btn-secondary" @onclick = "(()=>UpdateNumberText(1))">Update Number Text</button>
 
 <ul>
 @for(var i = 0; i < 5; i++)
-{
-        <li>
+{       
+        @* Calling method to generate number list *@
+        <span>
             @GetNumberText(i + 1)
+        </span>
+        var tempNumber = i;
+        <li>
+            <button class="btn btn-danger" @onclick="(()=>UpdateNumberText(tempNumber + 1))">Update Number Text</button>
         </li>
+
+        @* Generating Button and listing number by delegating method to button event *@
+
+
 }
 </ul>
 
 
 @code {
 
-    //Method
+    //Method Text
     private string? textInfo = null;
 
     private void UpdateText()
@@ -31,6 +41,13 @@
         textInfo = "This is the new information";
     }
 
+    //Update number list
+    private void UpdateNumberText(int i)
+    {
+        textInfo = GetNumberText(i);
+    }
+
+    // Get number list
     private string GetNumberText(int i)
     {
         return $"This is number {i}";
