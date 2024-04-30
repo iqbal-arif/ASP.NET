@@ -1,0 +1,22 @@
+﻿
+
+@* @page "/page"
+@page "/pages/page" *@
+
+@rendermode InteractiveAuto
+@attribute [Route(nameof(Start))]
+@inject NavigationManager Navigation
+
+<h3>Start</h3>
+
+<h4>This is Start Page</h4>
+
+<button class="btn btn-primary" @onclick="GoToCounter">Go To Counter</button>
+
+@code {
+    private void GoToCounter()
+    {
+        //Does a Partial Refresh Not a full page
+        Navigation.NavigateTo("counter");
+    }
+}
