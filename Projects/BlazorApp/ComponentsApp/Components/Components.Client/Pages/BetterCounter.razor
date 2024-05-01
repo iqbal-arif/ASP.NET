@@ -1,0 +1,62 @@
+﻿@* Defining at page with passing Title paramter *@
+@page "/BetterCounter/{Title?}"
+
+@* Defining at at page with passing StartingValue int as paramter *@
+@page "/BetterCounter/{StartingValue:int}"
+
+@* Defining at at page with catch all paramter *@
+@page "/BetterCounter/{*PageRoute}"
+
+
+
+@rendermode InteractiveAuto
+
+
+<PageTitle>Better Counter</PageTitle>
+
+<h1>@Title</h1>
+
+<h2>PageRoute</h2>
+
+<p role="status" style="font-size:18px">Current count: @currentCount</p> 
+
+<p role="status" style="font-size:18px">Starting Value count: @StartingValue</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+
+@code {
+    //Defined Property
+    [Parameter]
+    public string? Title { get; set; }
+    
+    
+    //Defined Property
+    [Parameter]
+    public string? PageRoute { get; set; }
+
+
+
+
+    //Defined Starting Value for the counter
+    [Parameter]
+    public int StartingValue { get; set; }
+
+    private int currentCount = 0;
+
+    //
+    protected override void OnParametersSet()
+    {
+        Title = Title ?? "Our Better Counter";
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+
+        StartingValue++;
+    }
+
+   
+}
