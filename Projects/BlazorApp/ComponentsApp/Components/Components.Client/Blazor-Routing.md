@@ -15,19 +15,7 @@
 4. Routing Through Routing attribute
 	@attribute [Route(nameof(Start))]
 ***Note: the nameof(Start) is a reference to the page. So it will know if the page is renamed. But it would not @page method.***
-5. Routing Through
-
-
-
-
-
-
-
-
-
-
-
-1. 
+ 
 3. Define Naviation Dependency Injection
 @inject NavigationManager for Navigating to specific page.
 ***Note: Navigation.NavigateTo("counter"); is an enhanced Navigation. Meaning it won't refresh Full Page Refresh when using NavigatToPage to navigate from page to page. Uncomment the navigation in Layout/NavMenue.razor file.***
