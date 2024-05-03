@@ -34,7 +34,10 @@ public class CountryContext : DbContext
   }
 }
 ```
-The Entity Framework type DbSet represents a database table in memory. It is typically used with a <T> qualifier. The type, or T, is one of your database model classes. The ModelBuilder binds each database table entity to a corresponding DbSet.
+1. The Entity Framework type DbSet represents a database table in memory.
+2. It is typically used with a <T> qualifier.
+3. The type, or T, is one of your database model classes.
+4. The ModelBuilder binds each database table entity to a corresponding DbSet.
 
 DbSet has a number of member methods that can return a List<T> of records or a single record
 
