@@ -30,42 +30,27 @@ The Entity Framework context DbSet member provides the Attach() method to update
 
 Use the EF context SaveChanges() or SaveChangesAsync() methods to persist all inserted, updated, and deleted records to the database table.
 
-**const numberDigits = (num) => {
+**Updating Records
+```
+// Assuming Country is of type Country
+// Assuming _context is of a type inheriting DbSet
 
-  const digitCount = num.toString();
-
-  const numIncludes = digitCount.includes('-');
-
-
-
-  if (numIncludes === true) {
-
-    return `The number is: ${num}`;
-
-  } else if (digitCount.length === 1) {
-
-    return `One digit: ${num}`;
-
-  } else if (digitCount.length === 2) {
-
-    return `Two digits: ${num}`;
-
-  } else if (digitCount.length === 3) {
-
-    return `The number is: ${num}`;
-
+public async Task<IActionResult> OnPostAsync(string id)
+{
+  if (!ModelState.IsValid)
+  {
+    return Page();
   }
+  
+  _context.Attach(Country).State = EntityState.Modified;
 
-};
+  await _context.SaveChangesAsync();
+  
+  return RedirectToPage("./Index");   
+}
+```
+The Entity Framework context DbSet member provides the Attach() method to update an existing record in the in-memory representation of the corresponding database table. A batch of multiple records can also be updated in this fashion.
 
-y = -235;
+The record is passed from the browser in the <form> post back. In this case a Country member is declared with a [BindProperty] attribute so the entire record is passed back to the server.
 
-newNum = y.toString();
-
-const r = newNum.includes('-');
-
-console.log(r);
-
-
-
-console.log(numberDigits(100));
+Use the EF context SaveChanges() or SaveChangesAsync() methods to persist all updated records to the database table
