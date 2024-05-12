@@ -1,5 +1,6 @@
 **Model Binding**
 ***
+
 ```
 public class IndexModel : PageModel
 {
