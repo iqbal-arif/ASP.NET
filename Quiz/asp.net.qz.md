@@ -148,3 +148,11 @@ public class WeatherModel
 }
 ```
 A14: 👏 You got it!
+
+Q15: Say that a user is browsing pages on my-portfolio.com, built with ASP.NET. They are about to go to the /Projects page, which is associated with the ProjectsModel. What method will be invoked when they enter this URL in their browser?
+```
+https://my-portfolio.com/Projects/
+
+```
+A15: ProjectsModel.OnGetAsync()
+👏 Correct! When a page receives a GET request, the corresponding page model’s OnGet() or OnGetAsync() method is invoked.
