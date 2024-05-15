@@ -173,4 +173,11 @@ Q17: The Razor page Pages/Contact.cshtml is shown below. Fill in the code so tha
 
 A17: 👏 You got it!
 
-Q18: 
+Q18: Fill in the below Razor markup so that the element’s href attribute will render as /Weather?forecast=tomorrow.
+Code
+
+@page
+
+<a asp-page="/Weather" asp-route-forecast="tomorrow">Tomorrow</a>
+
+A17: asp-page corresponds to the base of the URL.
