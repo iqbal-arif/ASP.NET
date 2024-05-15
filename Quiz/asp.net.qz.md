@@ -156,3 +156,21 @@ https://my-portfolio.com/Projects/
 ```
 A15: ProjectsModel.OnGetAsync()
 👏 Correct! When a page receives a GET request, the corresponding page model’s OnGet() or OnGetAsync() method is invoked.
+
+Q16: Say that a user is submitting a form on our delivery site, built with ASP.NET. The form generates a POST request and it is on the /Order page, which is associated with the OrderModel. What method will be invoked when the form is submitted?
+
+A16: OrderModel.OnPostAsync()
+
+👏 Correct! When a page receives a POST request, the corresponding page model’s OnPost() or OnPostAsync() method is invoked.
+
+Q17: The Razor page Pages/Contact.cshtml is shown below. Fill in the code so that the URL has an additional parameter, like Contact/Sheila or Contact/Sueko or Contact/James.
+```
+@page "{name}"
+
+@{
+  ViewData["Title"] = "Contact";
+}
+
+A17: 👏 You got it!
+
+Q18: 
