@@ -170,14 +170,145 @@ Q17: The Razor page Pages/Contact.cshtml is shown below. Fill in the code so tha
 @{
   ViewData["Title"] = "Contact";
 }
-
+```
 A17: 👏 You got it!
 
 Q18: Fill in the below Razor markup so that the element’s href attribute will render as /Weather?forecast=tomorrow.
-Code
 
+```
 @page
 
 <a asp-page="/Weather" asp-route-forecast="tomorrow">Tomorrow</a>
+```
+A18: asp-page corresponds to the base of the URL.
 
-A17: asp-page corresponds to the base of the URL.
+Q19: Say that RetiredModel is associated with the page /Retired. Fill in the code so that it will send the /New page in response to every GET request.
+```
+public class RetiredModel
+{
+  public IActionResult OnGet()
+  {
+    return RedirectToPage("/New");
+  }
+}
+```
+A19: 👏 You got it!
+
+Q20: Say that MissingModel is associated with the page /Missing. Fill in the code so that it will send a 404 status code in response to every GET request.
+```
+public class MissingModel
+{
+  public IActionResult OnGet()
+  {
+    return NotFound();
+  }
+}
+```
+A20: 👏 You got it!
+
+Q21: Say that ContactModel is associated with the page /Contact. Fill in the code so that it will send the /Contact page in response to every GET request.
+```
+public class ContactModel
+{
+  public IActionResult OnGet()
+  {
+    return Page();
+  }
+}
+```
+A21: 👏 You got it!
+
+Q22: The Razor page Pages/Contact.cshtml is shown below. Fill in the code so that the URL has an additional parameter, like Contact/Sheila or Contact/Sueko or Contact/James.
+```
+@page "{name}"
+
+@{
+  ViewData["Title"] = "Contact";
+}
+```
+A22: 👏 You got it!
+
+Q23: The Razor page Pages/Contact.cshtml is shown below. Fill in the code so that the page is made available at /Contact/Me.
+```
+@page "Me"
+
+@{
+  ViewData["Title"] = "Contact";
+}
+```
+A23: 👏 You got it!
+
+Q24: Given the following classes and inheritance, which of the following references are valid?
+```
+class Computer : Machine
+class Laptop : Computer, IPortable
+
+Laptop lap = new Laptop();
+
+```
+A24: 
+1. IPortable p  = lap;
+1. Computer c = lap;
+1. Machine m = lap;
+1. All these references are valid.
+
+Q25: What is an object?
+A25: An instance of a class.
+
+👏 Correct! If a class is a blueprint, then an object is a house built from that blueprint.
+
+
+Q25: Use a foreach loop to iterate over animals and display each element in an <li> tag.
+```
+@{
+  List<string> animals = new List<string>() 
+  {
+    "Dog",
+    "Cat",
+    "Cow",
+    "Mouse"
+  };
+}
+
+<ul>
+  @foreach(string animal in animals)
+  {
+    <li>@animal</li>
+  }
+</ul>
+```
+A25: You got it!
+
+Q26: Print the number of elements in numbers and triplets.
+```
+List<int> numbers = new List<int> { 3, 6, 9, 17, 21 };
+
+Console.WriteLine(numbers.Count());
+
+var triplets = numbers.Where(x => x % 3 == 0);
+
+Console.WriteLine(triplets..Count());
+
+A26: Lists use the property Count.
+
+
+Q27: Practice Assessment
+Questions
+
+What will be displayed on the view page given the following code?
+
+@page
+
+@{
+  int i = 0;
+}
+
+@while (i < 3)
+{
+  i += 1;
+  <p>@i</p>
+}
+
+A27: 1 2 3
+
+👏 Correct! The loop breaks before the variable, i, reaches 3. It’s incremented by 1 before being printed and uses the “@” sign to display its value.
