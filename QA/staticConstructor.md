@@ -110,7 +110,7 @@ namespace StaticConstructorDemo
     }
 }
 ```
-Output:
+***Output:
 Static Constructor Executed
 Default Constructor Executed
 Value of i : 101
@@ -121,5 +121,17 @@ Default Constructor Executed
 Value of i : 101
 Value of j : 103
 Value of i : 102
-Value of j : 104
+Value of j : 104***
 
+***
+**Summary of Static and Non-Static Constructors:**
+
+   1. A constructor is a special method inside a class used to initialize the data members. If we create the constructor using a static modifier then we call it a static constructor and the rest of all are non-static constructors only.
+  2. The static constructor is used to initialize the static data members and the non-static constructor is used to initialize the non-static data members of a class.
+  3.  The static constructor is always invoked implicitly while the non-static constructor is always invoked explicitly.
+  4.  If we have not defined any constructor explicitly, then the compiler will provide the implicit constructor in the following conditions.
+  5.  For a static class, the compiler will provide a static constructor implicitly, but no non-static constructor.
+  6.  For a non-static class, the compiler will provide a non-static constructor, if the non-static class has any static member, then only the compiler will provide the static constructor.
+  7.  Static constructors will execute only once during the life cycle of a class and non-static constructors are executed 0 or n number times. If we have not created any object, then the constructor will execute 0 times and if we create n number of objects, then the constructor will execute n number of times.
+  8.  In a class, we can have only one static constructor and i.e. too parameterless, and hence static constructor cannot be overloaded. But, in a class, we can define any number of non-static constructors and hence non-static constructors as overloaded.
+   9. A static constructor is executed when our class execution starts and it will execute only once and it will be the first block inside a class to be executed while non-static constructors are going to be executed when we create an instance of a class and for each instance of the class
