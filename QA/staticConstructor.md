@@ -52,3 +52,74 @@ Points To Remember About Static Constructor in C#:
   6.  If a class is static then we cannot create the object for the static class.
   7.  It is called automatically to initialize the static members.
   8.  Static constructor will be invoked only once i.e. at the time of class loading.
+
+  ****
+
+  **Static Constructor Real-time Example in C#**
+  ***https://dotnettutorials.net/lesson/why-do-we-need-constructors-in-csharp/***
+1. The static Constructor in C# will be invoked only once. There is no matter how many instances (objects) of the class are created, it is going to be invoked only once and that is when the class is loaded for the first time.
+
+2. The static constructor is used to initialize the static fields of the class. You can also write some code inside the static constructor which is going to be executed only once. The static data members in C# are created only once even though we created any number of objects.
+```
+using System;
+namespace StaticConstructorDemo
+{
+    class Example
+    {
+        int i;
+        static int j;
+        //Default Constructor
+        public Example()
+        {
+            Console.WriteLine("Default Constructor Executed");
+            i = 100;
+        }
+        //static Constructor
+        static Example()
+        {
+            Console.WriteLine("Static Constructor Executed");
+            j = 100;
+        }
+        public void Increment()
+        {
+            i++;
+            j++;
+        }
+        public void Display()
+        {
+            Console.WriteLine("Value of i : " + i);
+            Console.WriteLine("Value of j : " + j);
+        }
+    }
+    class Test
+    {
+        static void Main(string[] args)
+        {
+            Example e1 = new Example();
+            e1.Increment();
+            e1.Display();
+            e1.Increment();
+            e1.Display();
+            Example e2 = new Example();
+            e2.Increment();
+            e2.Display();
+            e2.Increment();
+            e2.Display();
+            Console.ReadKey();
+        }
+    }
+}
+```
+Output:
+Static Constructor Executed
+Default Constructor Executed
+Value of i : 101
+Value of j : 101
+Value of i : 102
+Value of j : 102
+Default Constructor Executed
+Value of i : 101
+Value of j : 103
+Value of i : 102
+Value of j : 104
+
