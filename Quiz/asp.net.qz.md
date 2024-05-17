@@ -367,3 +367,8 @@ class SpaceInvader
 }
 ```
 A33: A constructor.
+
+Q34: What is Razor Pages?
+A34: Razor Pages is a framework based on ASP.NET Core, it consists of Razor markup, C#, and HTML.
+
+👏 Correct! Razor Pages is a lightweight framework that allow us to build web sites with clean separation of concerns.
