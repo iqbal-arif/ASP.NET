@@ -308,7 +308,62 @@ What will be displayed on the view page given the following code?
   i += 1;
   <p>@i</p>
 }
-
+```
 A27: 1 2 3
 
 👏 Correct! The loop breaks before the variable, i, reaches 3. It’s incremented by 1 before being printed and uses the “@” sign to display its value.
+
+Q28: What is the output of the following C# code?
+```
+Object obj = new Object();
+Console.WriteLine(obj.ToString());
+```
+A28: System.Object
+
+Q29: If this code was included in a Razor view page, how would you display the value of the Title property inside a <header> tag?
+```
+@{
+  ViewData["Title"] = "About";
+}
+```
+A29: <header>@ViewData["Title"]</header>
+👏 Correct! You can access the value by using bracket notation with the key in quotation marks.
+
+Q30: Given the following C# code, what is the output of vp.signIntoLaw()?
+```
+President p = new President();
+VicePresident vp = p;
+p.signIntoLaw(); // => Law signed
+```
+A30: Error! "SignIntoLaw()" is not defined for the type "VicePresident"
+
+
+Q31: This Layout page currently defines a header and footer. Fill in the code so that it renders a content page in-between the two.
+```
+<p>This is header text</p>
+@RenderBody()
+<p>&copy; 2020 Codecademy. All rights reserved.</p>
+```
+A31: 👏 You got it!
+
+Q32: In order for a file to act as a Razor view page, what directive must be added on the first line of the file?
+A32: @page
+👏 Correct! @page is the first line of code for every view page in order for the file to be treated as a Razor Page.
+
+Q33: Given the SpaceInvader class, what is Speed?
+```
+class SpaceInvader 
+{
+  public SpaceInvader()
+  {
+    this.Speed = 5;
+  }
+
+  public bool IsMothership
+  { get; set; }
+
+  public int Speed
+  { get; set; }
+}
+```
+A33: A constructor.
