@@ -373,3 +373,20 @@ A34: Razor Pages is a framework based on ASP.NET Core, it consists of Razor mark
 
 👏 Correct! Razor Pages is a lightweight framework that allow us to build web sites with clean separation of concerns.
 
+Q35: Which namespaces should be added so that the references to List<T> and Where() don’t cause errors?
+```
+// Missing "using" statements
+
+var ocean = new List<string>();
+ocean.Add("sea otter");
+ocean.Add("dolphin");
+ocean.Add("shark");
+
+var scary = ocean.Where(x => x == "shark");
+```
+A35: 
+```
+using System.Collections.Generic;
+using System.Linq;
+```
+👏 Correct! System.Linq enables the Where operator and System.Collections.Generic enables the List<T> class.
