@@ -390,3 +390,28 @@ using System.Collections.Generic;
 using System.Linq;
 ```
 👏 Correct! System.Linq enables the Where operator and System.Collections.Generic enables the List<T> class.
+
+
+Q36: Fill in the code in order to iterate over all the items in the list fruits.
+```
+@{
+  List<string> fruits = new List<string>()
+  {
+    "Apple",
+    "Pear",
+    "Banana",
+    "Grapes"
+  };
+}
+
+<p>My favorite fruits are:</p>
+<ul>
+  @for(int i = 0; i < fruits.Count; i++)
+  {
+    @fruits[i]
+  }
+</ul>
+
+Answer Choices
+👏
+You got it!
