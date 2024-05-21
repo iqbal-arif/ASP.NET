@@ -452,3 +452,16 @@ public string MainIngredient
 ```
 
 👏 Excellent! This property follows the proper naming convention and has both methods.
+
+Q41: Print the number of elements in numbers and triplets.
+A41 : 👏 You got it!
+```
+List<int> numbers = new List<int> { 3, 6, 9, 17, 21 };
+
+Console.WriteLine(numbers.Count);
+
+var triplets = numbers.Where(x => x % 3 == 0);
+
+Console.WriteLine(triplets.Count());
+```
+
