@@ -411,7 +411,5 @@ Q36: Fill in the code in order to iterate over all the items in the list fruits.
     @fruits[i]
   }
 </ul>
-
-Answer Choices
-👏
-You got it!
+```
+A36:👏 You got it!
