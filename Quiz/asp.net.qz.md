@@ -413,3 +413,42 @@ Q36: Fill in the code in order to iterate over all the items in the list fruits.
 </ul>
 ```
 A36:👏 You got it!
+
+Q37: What is the difference between _ViewImports.cshtml and _ViewStart.cshtml?
+A37: _ViewImports.cshtml_ is used to provide using statements thorughout all your view pages.
+_ViewStart.cshtml is used for code to be executed as soon as a page is rendered.
+
+
+Q38: Given the following C# code, what is the output of f.makeMillions()?
+```
+Player p = new Player();
+Fan f = p;
+p.makeMillions(); // => 2000000
+```
+A38: Error! "makeMillions()" is not defined for the type "Fan".
+
+Q39: A model, UserModel, with a property named FullName is passed into a view page. How would you access and display that property?
+```
+@page @model UserModel
+
+<div>
+  <h1>Welcome back, @Model.FullName </h1>
+</div>
+```
+A39: 👏 You got it!
+
+Q40: Practice Assessment
+Questions
+
+What is the correct syntax for a property of class Dumpling?
+A40: 
+
+```
+public string MainIngredient
+{
+    set {return mainIngredient;}
+    set {mainIngredient = value;}
+}
+```
+
+👏 Excellent! This property follows the proper naming convention and has both methods.
