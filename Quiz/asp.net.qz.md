@@ -417,7 +417,7 @@ A36:👏 You got it!
 Q37: What is the difference between _ViewImports.cshtml and _ViewStart.cshtml?
 A37: _ViewImports.cshtml_ is used to provide using statements thorughout all your view pages.
 _ViewStart.cshtml is used for code to be executed as soon as a page is rendered.
-
+👏 Correct! _ViewImports.cshtml is used to include common namespaces, and _ViewStart.cshtml will interpret code before a view page renders.
 
 Q38: Given the following C# code, what is the output of f.makeMillions()?
 ```
@@ -465,3 +465,34 @@ var triplets = numbers.Where(x => x % 3 == 0);
 Console.WriteLine(triplets.Count());
 ```
 
+Q42: If Dissertation inherits from Book, why might the following code produce an error?
+```
+Book bk = new Book();
+Dissertation dbk = bk;
+// Error!
+```
+A42: Dissertation
+
+
+Q43: Which line will throw an error? Next() is a method defined only in the Random class.
+```
+Random rand = new Random();
+Object orand = rand;
+rand.Next(0, 1);
+orand.Next(0, 1);
+```
+A43: orand.Next(0,1);
+👏 Correct! An Object reference cannot access the Next() method because it is not defined in the Object class.
+
+Q44: Which of the following is not a predefined method of the Object class in C#?
+
+A44: All are predefined methods in C#.
+
+Q45: There are two classes, Dress and Jeans, that implement the IZippable interface and inherit from Object. Dress and Jeans don’t inherit from each other. Which of these statements throws an error?
+
+A45: 
+Dress d = new Dress();
+Object j = d;
+
+👏
+Yes! This throws an error because a Dress object cannot be implicitly cast to Jeans. They aren’t in each other’s inheritance hierarchy.
