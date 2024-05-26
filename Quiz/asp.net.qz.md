@@ -418,6 +418,8 @@ Q37: What is the difference between _ViewImports.cshtml and _ViewStart.cshtml?
 A37: _ViewImports.cshtml_ is used to provide using statements thorughout all your view pages.
 _ViewStart.cshtml is used for code to be executed as soon as a page is rendered.
 👏 Correct! _ViewImports.cshtml is used to include common namespaces, and _ViewStart.cshtml will interpret code before a view page renders.
+_ViewImports.cshtml abstracts all using statements, and _ViewStart.cshtml stores code to be executed on renders.
+_ViewStart.cshtml can store any code to be executed upon a page render, not only the layout definition.
 
 Q38: Given the following C# code, what is the output of f.makeMillions()?
 ```
@@ -446,7 +448,7 @@ A40:
 ```
 public string MainIngredient
 {
-    set {return mainIngredient;}
+    get {return mainIngredient;}
     set {mainIngredient = value;}
 }
 ```
@@ -496,3 +498,46 @@ Object j = d;
 
 👏
 Yes! This throws an error because a Dress object cannot be implicitly cast to Jeans. They aren’t in each other’s inheritance hierarchy.
+
+Q46: If Television inherits from Device and implements the IClickable interface, which of these is an explicit downcast?
+A46: Television t = (Television) new Devices();
+
+👏 Correct! A Device object is explicitly downcast to the Television subclass.
+
+Q47: Given the following C# code, what is the output of f.makeMillions()?
+```
+Player p = new Player();
+Fan f = p;
+p.makeMillions(); // => 2000000
+```
+A47: Error! "makeMillions()" is not defined for the Type "Fan".
+
+👏 Correct! When using an Fan-type reference for a Player object, makeMillions() cannot be accessed.
+
+Q48: Which of these is a method defined in the Object class?
+A48: 
+
+
+Q49: What will be printed by the code when Main() is invoked?
+```
+Class Animal
+{
+  public virtual string Describe()
+  { return "Here's an animal"; }
+}
+
+class Amphibian : Animal
+{
+  public override string Describe()
+  { return "Here's an amphibian"; }
+}
+
+class Program {
+  public static void Main (string[] args) {
+    Amphibian amp = new Animal();
+    Console.WriteLine(amp.Describe());
+  }
+}
+```
+A49: An error will be thrown
+An error is thrown because any downcast must be explicit. In this case it should be: (Amphibian) new Animal();.
