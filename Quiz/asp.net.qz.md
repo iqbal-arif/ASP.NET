@@ -541,3 +541,27 @@ class Program {
 ```
 A49: An error will be thrown
 An error is thrown because any downcast must be explicit. In this case it should be: (Amphibian) new Animal();.
+
+Q50: Given the following C# class, what would be considered a property?
+```
+class PartyMember
+{
+  public string name;
+  public string Name
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+```
+A50:
+```
+public string Name
+  {
+    get { return name; }
+    set { name = value; }
+  }
+```
+
+👏
+Nice work! This is the property complete with its two methods.
