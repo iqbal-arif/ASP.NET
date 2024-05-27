@@ -428,6 +428,7 @@ Fan f = p;
 p.makeMillions(); // => 2000000
 ```
 A38: Error! "makeMillions()" is not defined for the type "Fan".
+👏 Correct! When using an Fan-type reference for a Player object, makeMillions() cannot be accessed.
 
 Q39: A model, UserModel, with a property named FullName is passed into a view page. How would you access and display that property?
 ```
@@ -565,3 +566,16 @@ public string Name
 
 👏
 Nice work! This is the property complete with its two methods.
+
+Q51: Say that Chair and Bench implement the ISittable interface, which includes one method Sit(). Select the correct type so the code throws no errors.
+```
+ISittable[] seats = new ISittable[] { new Chair(), new Bench() };
+
+foreach (
+
+: correct answer ISittable seat in seats)
+{
+  seat.Sit()
+}
+```
+A51:👏 You got it!
