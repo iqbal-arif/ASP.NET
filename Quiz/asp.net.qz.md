@@ -420,6 +420,7 @@ _ViewStart.cshtml is used for code to be executed as soon as a page is rendered.
 👏 Correct! _ViewImports.cshtml is used to include common namespaces, and _ViewStart.cshtml will interpret code before a view page renders.
 _ViewImports.cshtml abstracts all using statements, and _ViewStart.cshtml stores code to be executed on renders.
 _ViewStart.cshtml can store any code to be executed upon a page render, not only the layout definition.
+Partials are generally stored under the /Shared folder in their own separate files.
 
 Q38: Given the following C# code, what is the output of f.makeMillions()?
 ```
@@ -474,8 +475,9 @@ Book bk = new Book();
 Dissertation dbk = bk;
 // Error!
 ```
-A42: Dissertation
+A42: Dissertation has a method that is incompatible with Book
 
+👏 Exactly! You have to explicitly downcast by declaring the type in parentheses but even then, it might fail.
 
 Q43: Which line will throw an error? Next() is a method defined only in the Random class.
 ```
@@ -490,6 +492,7 @@ A43: orand.Next(0,1);
 Q44: Which of the following is not a predefined method of the Object class in C#?
 
 A44: All are predefined methods in C#.
+GetType();Equals(Object);ToString()
 
 Q45: There are two classes, Dress and Jeans, that implement the IZippable interface and inherit from Object. Dress and Jeans don’t inherit from each other. Which of these statements throws an error?
 
@@ -579,3 +582,21 @@ foreach (
 }
 ```
 A51:👏 You got it!
+
+Q52: Given the SpaceInvader class, what is Speed?
+```
+class SpaceInvader 
+{
+  public SpaceInvader()
+  {
+    this.Speed = 5;
+  }
+
+  public bool IsMothership
+  { get; set; }
+
+  public int Speed
+  { get; set; }
+}
+```
+A52: A Property 👏 Correct!
