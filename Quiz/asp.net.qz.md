@@ -421,7 +421,12 @@ _ViewStart.cshtml is used for code to be executed as soon as a page is rendered.
 _ViewImports.cshtml abstracts all using statements, and _ViewStart.cshtml stores code to be executed on renders.
 _ViewStart.cshtml can store any code to be executed upon a page render, not only the layout definition.
 Partials are generally stored under the /Shared folder in their own separate files.
-
+```
+_ViewImports.cshtml is used to provide using statements throughout all your view pages.
+_ViewStart.cshtml is used for code to be executed as soon as page is rendered.
+Correct Answer
+👏 Correct! _ViewImports.cshtml is used to include common namespaces, and _ViewStart.cshtml will interpret code before a view page renders.
+```
 Q38: Given the following C# code, what is the output of f.makeMillions()?
 ```
 Player p = new Player();
@@ -600,3 +605,11 @@ class SpaceInvader
 }
 ```
 A52: A Property 👏 Correct!
+
+Q53: Fill in the following C# code:
+```
+Cookie chocolate = new Cookie();
+BakedGood bg = chocolate;
+Cookie oatmeal = (Cookie)bg;
+```
+A53: 👏 You got it!
